@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Asm</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body style="text-align: center;">
+
+{{#each users}}
+
+
+<form>
+    <div style="clear: both;width: 100%;">
+        <h2 style="color: red;"><em>Thông Tin</em></h2>
+        <h5 style="width: 100%;text-align: left;margin: 5px;">Họ Và Tên: {{this.name}}</h5>
+        <h5 style="width: 100%;text-align: left;margin: 5px;">Địa Chỉ: {{this.address}}</h5>
+        <h5 style="width: 100%;text-align: left;margin: 5px;">Ngày Sinh: {{this.DateOfBird}}</h5>
+        <h5 style="width: 100%;text-align: left;margin: 5px;">Giới Tính: {{this.gioiTinh}}</h5>
+        <h5 style="width: 100%;text-align: left;margin: 5px;">Sở Thích: {{this.soThich}}</h5>
+        <h5 style="width: 100%;text-align: left;margin: 5px;">Số ĐT: {{this.phone}}</h5>
+    </div><img src="{{this.avatar}}" alt="" style="width: 70%;height: 200px;">
+</form>
+
+
+
+    <form action='/update' method="post"  enctype="multipart/form-data" >
+        <input name="ide" value="{{this._id}}" type="hidden"  style="width: 300px;line-height: 1.5;">
+
+        <button class="btn btn-primary" type="submit'"  style="float: left;border-radius: 10px;margin: 20px;background: red;border-color: initial;">Edit</button>
+
+    </form>
+
+<form action='/delete' method="post"  enctype="multipart/form-data" >
+    <input name="id" value="{{this._id}}" type="hidden"  style="width: 300px;line-height: 1.5;">
+
+    <button class="btn btn-primary" type="submit'"  style="float: left;border-radius: 10px;margin: 20px;background: red;border-color: initial;">Delete</button>
+
+</form>
+
+
+
+
+
+{{/each}}
+<button class="btn btn-primary" type="button'"  style="display: block;clear: both;background-color: red;color: white;width: 100%;"><a style="text-decoration: none;color: white" href="addUser.handlebars">AddUser</a></button>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

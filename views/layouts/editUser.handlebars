@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Asm</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body style="text-align: center;">
+<form action='/updateUser' method="post" enctype="multipart/form-data">
+{{#each users}}
+        <input name="id" value="{{this._id}}" type="hidden"  style="width: 300px;line-height: 1.5;">
+    <h2 style="text-align: center;color: red;padding: 20px;"><strong><em>Edit User</em></strong></h2><input type="text" value="{{this.name}}" placeholder="Name" style="border: 0.5px solid black;padding: 5px;width: 100%;margin-bottom: 20px;" name="name"><input value="{{this.address}}" type="text" placeholder="Address" style="border: 0.5px solid black;padding: 5px;width: 100%;margin-bottom: 20px;"
+        name="address"><input value="{{this.DateOfBird}}" type="date" name="date" style="width: 100%;margin-bottom: 20px;">
+    <div class="form-check" style="margin-left: 10px;float: left;"><input name="gioitinh" value="Nam" class="form-check-input" type="radio" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Nam</label></div>
+    <div class="form-check" style="float: left;margin-left: 10px;"><input name="gioitinh" value="Nữ" class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Nữ</label></div><input value="{{this.soThich}}" type="text" placeholder="Sở Thích" style="clear: both;border: 0.5px solid black;padding: 5px;width: 100%;margin-bottom: 20px;margin-top: 20px;"
+        name="sothich"><input name="avatar" multiple type="file" style="width: 100%;"><input name="phone" value="{{this.phone}}" type="tel" style="clear: both;border: 0.5px solid black;padding: 5px;width: 100%;margin-bottom: 20px;margin-top: 20px;" placeholder="Phone Number"><button class="btn btn-primary" type="submit"
+        style="background-color: red;color: white;width: 80%;">Save</button>
+{{/each}}
+</form>
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
