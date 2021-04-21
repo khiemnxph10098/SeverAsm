@@ -1,8 +1,10 @@
 {
-  "name": "sever-asm",
-  "version": "0.0.0",
-  "private": true,
+  "name": "demoexpress",
+  "version": "1.0.0",
+  "description": "Đây là bài tập node",
+  "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "dependencies": {
